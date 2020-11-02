@@ -68,12 +68,13 @@ const root = {
         const queryResults = await col.find({
             'metadata.name': { $in: names }
         }).limit(1).toArray();
-
+console.log('queryResults' +queryResults)
         await client.close();
+console.log('queryResults[0]'+ queryResults[0].hash)
+        const buf = await ipfs.get(queryResults[0].hash);
 
-        const buf = await ipfs.cat('bafkreia2yagdbf3crcghivgjscqba72qyphagvc7sigoxfd3a7omwe5ini');
-
-        return [JSON.parse(buf.toString())]
+console.log('ipfs'+ buf)
+        return [{"name":"Lab-Foobot02","user":"lab@wrl.onl","address":"Seoul, Seongbuk-gu, Wolgok 2(i)-dong, 화랑로 14길 5, Laboratory 8","room":"livinglab","location":"-","time":"2020-10-07T12:20:44+09:00","particle":11.980011,"temp":24.599,"humidity":35.561,"co2":699,"voc":194,"pollution":21.837154}]
         // const getAirQuality = new Promise(function(resolve, reject) {
         //     client.connect(err => {
         //         if (err) {

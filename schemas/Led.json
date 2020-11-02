@@ -1,0 +1,70 @@
+{
+  "name": "Cushion Sensor",
+  "pin": true,
+  "mill": "/json",
+  "json_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://.../td/Cushion",
+    "title": "Cushion Sensor",
+    "description": "앉아 있는지 여부를 판단",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "description": "name of the sensor - format: firstName+LastName ex)jonghoLee, wanhoIm"
+      },
+      "user": {
+        "type": "string",
+        "title": "User",
+        "description": "user of the sensor - format: firstName+LastName ex)jonghoLee, wanhoIm"
+      },
+      "address": {
+        "type": "string",
+        "title": "Address",
+        "description": "building where the sensor resides - format: organization-building ex)yongjaelee-house, kist-l1, kist-l8"
+      },
+      "room": {
+        "type": "string",
+        "title": "Room",
+        "description": "room number of the building where the sensor resides - ex) L8321"
+      },
+      "location": {
+        "type": "string",
+        "title": "Location",
+        "description": "location of the sensor - format: free"
+      },
+      "time": {
+        "type": "string",
+        "title": "Time",
+        "description": "time at which the data measurement was made - ex)\"2017-05-30T18:54:20+09:00\""
+      },
+      "pressure": {
+        "type": "number",
+        "title": "Pressure",
+        "description": "unit is to be defined"
+      },
+      "temp": {
+        "type": "number",
+        "title": "Temp",
+        "description": "temperature - unit: Celsius(℃)"
+      },
+      "status": {
+        "type": "number",
+        "title": "Status",
+        "description": "pm2.5 - unit: ㎍/㎥"
+      }
+    },
+    "required": [
+      "name",
+      "user",
+      "address",
+      "room",
+      "location",
+      "time",
+      "pressure",
+      "temp",
+      "status"
+    ]
+  }
+}

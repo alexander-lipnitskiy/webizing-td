@@ -1,195 +1,265 @@
 {
-  "@context": "https://schema.iot.webizing.org/",
-  "@type": ["AirQuality"],
-  "id": "https://.../td/AirQuality",
+  "@context": [
+    "http://iotschema.org/",
+    {"schema": "https://schema.org/"}
+  ],
+  "@type": [
+      "Sensor"
+  ],
+  "id": "https://localhost:3000/td/AirQuality",
   "name": "Air Quality Sensor",
   "names": "",
   "description": "공기질 로깅 ex)Foobot(5분 주기로 데이터를 가져옴)",
   "properties": {
-    "name": {
-      "@type": "name",
-      "type": "string",
-      "title": "Name",
-      "description": "name of the sensor - format: firstName+LastName ex)jonghoLee, wanhoIm",
-      "forms": [
-        {
-          "href": "http://localhost:3000/graphql?query={ airQuality {name}}",
-          "contentType": "application/json",
-          "op": ["readproperty"]
-        }
-      ],
-      "readOnly": true
-    },
-    "user": {
-      "@type": "user",
-      "type": "string",
-      "title": "User",
-      "description": "user of the sensor - format: firstName+LastName ex)jonghoLee, wanhoIm",
-      "forms": [
-        {
-          "href": "http://localhost:3000/graphql?query={ airQuality {user}}",
-          "contentType": "application/json",
-          "op": ["readproperty"]
-        }
-      ],
-      "readOnly": true
-    },
-    "address": {
-      "@type": "address",
-      "type": "string",
-      "title": "Address",
-      "description": "building where the sensor resides - format: organization-building ex)yongjaelee-house, kist-l1, kist-l8",
-      "forms": [
-        {
-          "href": "http://localhost:3000/graphql?query={ airQuality {address}}",
-          "contentType": "application/json",
-          "op": ["readproperty"]
-        }
-      ],
-      "readOnly": true
-    },
-    "room": {
-      "@type": "room",
-      "type": "string",
-      "title": "Room",
-      "description": "room number of the building where the sensor resides - ex) L8321",
-      "forms": [
-        {
-          "href": "http://localhost:3000/graphql?query={ airQuality {room}}",
-          "contentType": "application/json",
-          "op": ["readproperty"]
-        }
-      ],
-      "readOnly": true
-    },
-    "location": {
-      "@type": "location",
-      "type": "string",
-      "title": "Location",
-      "description": "location of the sensor - format: free",
-      "forms": [
-        {
-          "href": "http://localhost:3000/graphql?query={ airQuality {location}}",
-          "contentType": "application/json",
-          "op": ["readproperty"]
-        }
-      ],
-      "readOnly": true
-    },
-    "time": {
-      "@type": "time",
-      "type": "string",
-      "title": "Time",
-      "description": "time at which the data measurement was made - ex)\"2017-05-30T18:54:20+09:00\"",
-      "forms": [
-        {
-          "href": "http://localhost:3000/graphql?query={ airQuality {time}}",
-          "contentType": "application/json",
-          "op": ["readproperty"]
-        }
-      ],
-      "readOnly": true
-    },
-    "humidity": {
-      "@type": "humidity",
-      "type": "number",
-      "title": "Humidity",
-      "description": "습도 - unit: %",
-      "forms": [
-        {
-          "href": "http://localhost:3000/graphql?query={ airQuality {humidity}}",
-          "contentType": "application/json",
-          "op": ["readproperty"]
-        }
-      ],
-      "readOnly": true
-    },
-    "temp": {
-      "@type": "temp",
-      "type": "number",
-      "title": "Temp",
-      "description": "temperature - unit: Celsius(℃)",
-      "forms": [
-        {
-          "href": "http://localhost:3000/graphql?query={ airQuality {temp}}",
-          "contentType": "application/json",
-          "op": ["readproperty"]
-        }
-      ],
-      "readOnly": true
-    },
-    "particle": {
-      "@type": "particle",
-      "type": "number",
-      "title": "Particle",
-      "description": "pm2.5 - unit: ㎍/㎥",
-      "forms": [
-        {
-          "href": "http://localhost:3000/graphql?query={ airQuality {particle}}",
-          "contentType": "application/json",
-          "op": ["readproperty"]
-        }
-      ],
-      "readOnly": true
-    },
-    "co2": {
-      "@type": "co2",
-      "type": "number",
-      "title": "Co2",
-      "description": "이산화탄소 - unit: ppm",
-      "forms": [
-        {
-          "href": "http://localhost:3000/graphql?query={ airQuality {co2}}",
-          "contentType": "application/json",
-          "op": ["readproperty"]
-        }
-      ],
-      "readOnly": true
-    },
-    "voc": {
-      "@type": "voc",
-      "type": "number",
-      "title": "Voc",
-      "description": "휘발성 유기 화합물 - unit: ppb",
-      "forms": [
-        {
-          "href": "http://localhost:3000/graphql?query={ airQuality {voc}}",
-          "contentType": "application/json",
-          "op": ["readproperty"]
-        }
-      ],
-      "readOnly": true
-    },
-    "pollution": {
-      "@type": "pollution",
-      "type": "number",
-      "title": "Pollution",
-      "description": "미세먼지 - unit: TBD",
-      "forms": [
-        {
-          "href": "http://localhost:3000/graphql?query={ airQuality {pollution}}",
-          "contentType": "application/json",
-          "op": ["readproperty"]
-        }
-      ],
-      "readOnly": true
-    }
+      "name": {
+          "@type": "schema:name",
+          "type": "string",
+          "title": "Name",
+          "description": "name of the sensor - format: firstName+LastName ex)jonghoLee, wanhoIm",
+          "forms": [
+              {
+                  "href": "http://localhost:3000/graphql?query={ airQuality {name}}",
+                  "contentType": "application/json",
+                  "op": [
+                      "readproperty"
+                  ],
+                  "secure": "nosec_sc"
+              }
+          ],
+          "readOnly": true,
+          "observable": false,
+          "writeOnly": false
+      },
+      "user": {
+          "@type": "schema:user",
+          "type": "string",
+          "title": "User",
+          "description": "user of the sensor - format: firstName+LastName ex)jonghoLee, wanhoIm",
+          "forms": [
+              {
+                  "href": "http://localhost:3000/graphql?query={ airQuality {user}}",
+                  "contentType": "application/json",
+                  "op": [
+                      "readproperty"
+                  ],
+                  "secure": "nosec_sc"
+              }
+          ],
+          "readOnly": true,
+          "observable": false,
+          "writeOnly": false
+      },
+      "address": {
+          "@type": "schema:address",
+          "type": "string",
+          "title": "Address",
+          "description": "building where the sensor resides - format: organization-building ex)yongjaelee-house, kist-l1, kist-l8",
+          "forms": [
+              {
+                  "href": "http://localhost:3000/graphql?query={ airQuality {address}}",
+                  "contentType": "application/json",
+                  "op": [
+                      "readproperty"
+                  ],
+                  "secure": "nosec_sc"
+              }
+          ],
+          "readOnly": true,
+          "observable": false,
+          "writeOnly": false
+      },
+      "room": {
+          "@type": "schema:room",
+          "type": "string",
+          "title": "Room",
+          "description": "room number of the building where the sensor resides - ex) L8321",
+          "forms": [
+              {
+                  "href": "http://localhost:3000/graphql?query={ airQuality {room}}",
+                  "contentType": "application/json",
+                  "op": [
+                      "readproperty"
+                  ],
+                  "secure": "nosec_sc"
+              }
+          ],
+          "readOnly": true,
+          "observable": false,
+          "writeOnly": false
+      },
+      "location": {
+          "@type": "schema:location",
+          "type": "string",
+          "title": "Location",
+          "description": "location of the sensor - format: free",
+          "forms": [
+              {
+                  "href": "http://localhost:3000/graphql?query={ airQuality {location}}",
+                  "contentType": "application/json",
+                  "op": [
+                      "readproperty"
+                  ],
+                  "secure": "nosec_sc"
+              }
+          ],
+          "readOnly": true,
+          "observable": false,
+          "writeOnly": false
+      },
+      "time": {
+          "@type": "schema:time",
+          "type": "string",
+          "title": "Time",
+          "description": "time at which the data measurement was made - ex)\"2017-05-30T18:54:20+09:00\"",
+          "forms": [
+              {
+                  "href": "http://localhost:3000/graphql?query={ airQuality {time}}",
+                  "contentType": "application/json",
+                  "op": [
+                      "readproperty"
+                  ],
+                  "secure": "nosec_sc"
+              }
+          ],
+          "readOnly": true,
+          "observable": false,
+          "writeOnly": false
+      },
+      "humidity": {
+          "@type": "schema:humidity",
+          "type": "number",
+          "title": "Humidity",
+          "description": "습도 - unit: %",
+          "forms": [
+              {
+                  "href": "http://localhost:3000/graphql?query={ airQuality {humidity}}",
+                  "contentType": "application/json",
+                  "op": [
+                      "readproperty"
+                  ],
+                  "secure": "nosec_sc"
+              }
+          ],
+          "readOnly": true,
+          "observable": false,
+          "writeOnly": false
+      },
+      "temp": {
+          "@type": "schema:temp",
+          "type": "number",
+          "title": "Temp",
+          "description": "temperature - unit: Celsius(℃)",
+          "forms": [
+              {
+                  "href": "http://localhost:3000/graphql?query={ airQuality {temp}}",
+                  "contentType": "application/json",
+                  "op": [
+                      "readproperty"
+                  ],
+                  "secure": "nosec_sc"
+              }
+          ],
+          "readOnly": true,
+          "observable": false,
+          "writeOnly": false
+      },
+      "particle": {
+          "@type": "schema:particle",
+          "type": "number",
+          "title": "Particle",
+          "description": "pm2.5 - unit: ㎍/㎥",
+          "forms": [
+              {
+                  "href": "http://localhost:3000/graphql?query={ airQuality {particle}}",
+                  "contentType": "application/json",
+                  "op": [
+                      "readproperty"
+                  ],
+                  "secure": "nosec_sc"
+              }
+          ],
+          "readOnly": true,
+          "observable": false,
+          "writeOnly": false
+      },
+      "co2": {
+          "@type": "schema:co2",
+          "type": "number",
+          "title": "Co2",
+          "description": "이산화탄소 - unit: ppm",
+          "forms": [
+              {
+                  "href": "http://localhost:3000/graphql?query={ airQuality {co2}}",
+                  "contentType": "application/json",
+                  "op": [
+                      "readproperty"
+                  ],
+                  "secure": "nosec_sc"
+              }
+          ],
+          "readOnly": true,
+          "observable": false,
+          "writeOnly": false
+      },
+      "voc": {
+          "@type": "schema:voc",
+          "type": "number",
+          "title": "Voc",
+          "description": "휘발성 유기 화합물 - unit: ppb",
+          "forms": [
+              {
+                  "href": "http://localhost:3000/graphql?query={ airQuality {voc}}",
+                  "contentType": "application/json",
+                  "op": [
+                      "readproperty"
+                  ],
+                  "secure": "nosec_sc"
+              }
+          ],
+          "readOnly": true,
+          "observable": false,
+          "writeOnly": false
+      },
+      "pollution": {
+          "@type": "schema:pollution",
+          "type": "number",
+          "title": "Pollution",
+          "description": "미세먼지 - unit: TBD",
+          "forms": [
+              {
+                  "href": "http://localhost:3000/graphql?query={ airQuality {pollution}}",
+                  "contentType": "application/json",
+                  "op": [
+                      "readproperty"
+                  ],
+                  "secure": "nosec_sc"
+              }
+          ],
+          "readOnly": true,
+          "observable": false,
+          "writeOnly": false
+      }
   },
   "forms": [
-    {
-      "href": "http://localhost:3000/graphql?query={ airQuality {name user   address    room   location    time    humidity    temp   particle   co2    voc    pollution  }}",
-      "contentType": "application/json",
-      "op": ["readallproperties"]
-    }
+      {
+          "href": "http://localhost:3000/graphql?query={ airQuality {name user   address    room   location    time    humidity    temp   particle   co2    voc    pollution  }}",
+          "contentType": "application/json",
+          "op": [
+              "readallproperties"
+          ],
+          "secure": "nosec_sc"
+      }
   ],
   "securityDefinitions": {
-    "nosec_sc": {
-      "scheme": "nosec",
-      "description" : "no security"
-    }
+      "nosec_sc": {
+          "scheme": "nosec",
+          "description": "no security"
+      }
   },
-  "security": ["nosec_sc"],
-  "version": {"instance":"0.0.1" }
+  "security": [
+      "nosec_sc"
+  ],
+  "version": {
+      "instance": "0.0.1"
   }
-
-
+}

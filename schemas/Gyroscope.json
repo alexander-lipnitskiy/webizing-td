@@ -1,0 +1,69 @@
+{
+  "name": "Gyroscoper",
+  "pin": true,
+  "mill": "/json",
+  "plaintext": false,
+  "json_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://.../td/Gyroscoper",
+    "title": "Gyroscope Sensor",
+    "description": "공기질 로깅 ex)Foobot(5분 주기로 데이터를 가져옴)",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "description": "name of the sensor - format: firstName+LastName ex)jonghoLee, wanhoIm"
+      },
+      "user": {
+        "type": "string",
+        "title": "User",
+        "description": "user of the sensor - format: firstName+LastName ex)jonghoLee, wanhoIm"
+      },
+      "address": {
+        "type": "string",
+        "title": "Address",
+        "description": "building where the sensor resides - format: organization-building ex)yongjaelee-house, kist-l1, kist-l8"
+      },
+      "room": {
+        "type": "string",
+        "title": "Room",
+        "description": "room number of the building where the sensor resides - ex) L8321"
+      },
+      "location": {
+        "type": "string",
+        "title": "Location",
+        "description": "location of the sensor - format: free"
+      },
+      "x": {
+        "type": "string",
+        "title": "Time",
+        "description": "time at which the data measurement was made - ex)\"2017-05-30T18:54:20+09:00\""
+      },
+      "y": {
+        "type": "number",
+        "title": "Humidity",
+        "description": "습도 - unit: %"
+      },
+      "z": {
+        "type": "number",
+        "title": "Temp",
+        "description": "temperature - unit: Celsius(℃)"
+      }
+    },
+    "required": [
+      "name",
+      "user",
+      "address",
+      "room",
+      "location",
+      "time",
+      "humidity",
+      "temp",
+      "particle",
+      "co2",
+      "voc",
+      "pollution"
+    ]
+  }
+}
