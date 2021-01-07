@@ -8,9 +8,14 @@ Each branch in the repository represents implementations of this project using d
 
 # Requirements
 node.js - 12+
+
 yarn - 1.19.1+
+
 mongodb
-ipfs
+
+go-ipfs
+
+js-ipfs
 
 
 # Installation 
