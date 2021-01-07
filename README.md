@@ -90,3 +90,5 @@ Example of Rest API request to the air quality sensor http://localhost:4000/td/a
 To read more about TD https://www.w3.org/TR/wot-thing-description/
 
 To read more about JSON-LD https://json-ld.org/
+
+To read more about Vocabulary https://schema.org/
