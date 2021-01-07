@@ -16,11 +16,9 @@ node.js - 12+
 
 yarn - 1.19.1+
 
-mongodb
+mongodb - 4.0
 
-go-ipfs
-
-js-ipfs
+go-ipfs - 0.6.0+
 
 
 # Installation 
