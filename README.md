@@ -3,9 +3,6 @@
 The current repository is part of the TD project and represents the server side. The server part consists of: GraphQL API for obtaining the current state of the sensor, REST API represents a digital representation of the sensor in JSON-LD format, the database in which data about the current state of the sensor is stored. 
 Each branch in the repository represents implementations of this project using different technologies for storing data(IPFS, OrbitDB, Textile, MongoDB) and the use of different sensors.
 
-![alt text](https://github.com/alexander-lipnitskiy/webizing-td/blob/master/graph-ql.png)
-![alt text](https://github.com/alexander-lipnitskiy/webizing-td/blob/master/rest-api-td.png)
-
 # Branches
 
 
@@ -35,3 +32,13 @@ yarn run dev:start
 ```bash
 yarn run dev:start
 ```
+
+# Access API
+
+By default the server runs on port 4000.
+
+Example of access to the GraphQL API
+![alt text](https://github.com/alexander-lipnitskiy/webizing-td/blob/master/graph-ql.png)
+
+Example of access to Rest API
+![alt text](https://github.com/alexander-lipnitskiy/webizing-td/blob/master/rest-api-td.png)
