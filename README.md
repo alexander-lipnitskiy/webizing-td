@@ -60,11 +60,14 @@ yarn install
 
 # Development
 
+Automatically restarting the node application when file changes in the directory are detected.
+
 ```bash
 yarn run dev:start
 ```
 
 # Production
+
 
 ```bash
 yarn run dev:start
