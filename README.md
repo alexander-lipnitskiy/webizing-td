@@ -9,6 +9,15 @@ In order to receive data from the apple watch, we use a mobile application that 
 
 # Branches
 
+Each branch represents a different implementation of a TD server using a different number of sensors and different technologies
+
+schema-iot - store data in mongodb
+
+k-log-textile - store data in textile db
+
+me-centric - this branch part of the blockchain project, data stored in IPFS
+
+ipfs - store data in ipfs
 
 
 # Requirements
@@ -22,7 +31,9 @@ go-ipfs - 0.6.0+
 
 
 # Installation 
-Clone current repository 
+
+Clone the repository data to your Operating System.
+
 Use the package manager yarn to install modules.
 
 ```bash
