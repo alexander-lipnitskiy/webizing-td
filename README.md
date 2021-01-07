@@ -1,9 +1,14 @@
 # Webizing Thing Description
 
 The current repository is part of the TD project and represents the server side. The server part consists of: GraphQL API for obtaining the current state of the sensor, REST API represents a digital representation of the sensor in JSON-LD format, the database in which data about the current state of the sensor is stored. 
-Each branch in the repository represents implementations of this project using different technologies for storing data(IPFS, OrbitDB, Textile, MongoDB) and the use of different sensors.
+Each branch in the repository represents implementations of this project using different technologies for storing data(e.g. IPFS, OrbitDB, Textile, MongoDB) and the use of different sensors (e.g. Apple Watch, Smappee, Foobot)
+
+Some sensors, such as Smappee and Foobot, store data in the clouds, so the server synchronizes the data received from the cloud with one of the databases used in this project.
+
+In order to receive data from the apple watch, we use a mobile application that synchronizes the IOS health application with the server.
 
 # Branches
+
 
 
 # Requirements
