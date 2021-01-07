@@ -37,8 +37,10 @@ yarn run dev:start
 
 By default the server runs on port 4000.
 
-Example of access to the GraphQL API
+Example of GraphQL request http://localhost:4000/graphql
 ![alt text](https://github.com/alexander-lipnitskiy/webizing-td/blob/master/graph-ql.png)
 
-Example of access to Rest API
+
+Rest API root request http://localhost:4000/td
+Example of Rest API request to the air quality sensor http://localhost:4000/td/airquality
 ![alt text](https://github.com/alexander-lipnitskiy/webizing-td/blob/master/rest-api-td.png)
