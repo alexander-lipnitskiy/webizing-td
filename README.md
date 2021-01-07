@@ -43,6 +43,7 @@ Example of GraphQL request http://localhost:4000/graphql
 
 
 Rest API root request http://localhost:4000/td
+
 Example of Rest API request to the air quality sensor http://localhost:4000/td/airquality
 
 ![alt text](https://github.com/alexander-lipnitskiy/webizing-td/blob/master/rest-api-td.png)
