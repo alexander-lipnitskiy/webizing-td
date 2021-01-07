@@ -41,7 +41,7 @@ node.js - 12+
 
 yarn - 1.19.1+
 
-mongodb - 4.0
+mongodb - 4.0+
 
 go-ipfs - 0.6.0+
 
