@@ -21,8 +21,18 @@ ipfs - store data in ipfs
 
 # Architecture
 
+To better undestand thearchitecture as an example we can look on k-log-textile project. 
 
-In the image below you can see the architecture of k-log-textile
+In this project data generated is based on TD and in JSON-LD format. The IPFS network allows data to
+be stored and retrieved over libP2P protocol. Textile provides a encrypted schema based data
+storage over IPFS, and all the IoT devices syncs data among all the account peers whenever
+there is a new update. It uses the libP2P based pubsub messaging to sync data. Since we have
+used TD for creating instances of IoT devices, data can be retrieved from TD server using
+GraphQL API in the backend. The IoT data is stored in textile thread in blocks in the form of
+hash chains provide secured storage as well as data access among this IoT application. If any
+other application needs data from that application a new thread can be formed sharing the secret,
+thereby enabling data exchange among cross-applications in a secured manner. The docker
+containers provide all the device management and monitoring along with the data logs.
 
 ![alt text](https://github.com/alexander-lipnitskiy/webizing-td/blob/master/textile-db-arch.png)
 
