@@ -19,6 +19,12 @@ me-centric - this branch part of the blockchain project, data stored in IPFS
 
 ipfs - store data in ipfs
 
+# Architecture
+
+
+In the image below you can see the architecture of k-log-textile
+
+![alt text](https://github.com/alexander-lipnitskiy/webizing-td/blob/master/textile-db-arch.png)
 
 # Requirements
 node.js - 12+
