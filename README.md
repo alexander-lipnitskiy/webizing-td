@@ -4,6 +4,7 @@ The current repository is part of the TD project and represents the server side.
 Each branch in the repository represents implementations of this project using different technologies for storing data(IPFS, OrbitDB, Textile, MongoDB) and the use of different sensors.
 
 ![alt text](https://github.com/alexander-lipnitskiy/webizing-td/blob/master/graph-ql.png)
+![alt text](https://github.com/alexander-lipnitskiy/webizing-td/blob/master/rest-api-td.png)
 
 # Branches
 
