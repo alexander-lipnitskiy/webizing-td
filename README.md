@@ -45,6 +45,8 @@ mongodb - 4.0
 
 go-ipfs - 0.6.0+
 
+docker - 19.0.3
+
 
 # Installation 
 
