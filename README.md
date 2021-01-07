@@ -1,13 +1,16 @@
 # webizing-td
-Webizing Thing Description with OrbitDB
+Webizing Thing Description
 
-Branches
+# Branches
 
 
-Requirements
+# Requirements
 node.js - v12
 
-Development
+# Development
 
+```bash
 yarn install
 yarn run dev:start
+```
+
