@@ -23,17 +23,46 @@ const ipfsCamera = require('./routes/td/ipfs-camera');
 const sleep = require('./routes/td/sleep');
 const smartTable = require('./routes/td/smart-table');
 const smartWatch = require('./routes/td/smart-watch');
+const thing = require('./routes/td-manager');
 
 const smartWatchRouter = require('./routes/smart-watch');
 
 const pinningRouter = require('./routes/pinning/cameras');
+const tdManager = require('./routes/td-manager');
 
 const app = express();
 const cors = require('cors');
 
+// const passport = require('passport');
+// const Strategy = require('passport-http-bearer').Strategy;
+
+// const jwt = require("express-jwt");
+// const jwksRsa = require("jwks-rsa");
+
+const db = require('./db/users');
+
+// const authConfig = {
+//   domain: "psy-tests.auth0.com",
+//   audience: "https://your-url-endpoint.com"
+// };
+
+// const checkJwt = jwt({
+//   secret: jwksRsa.expressJwtSecret({
+//     cache: true,
+//     rateLimit: true,
+//     jwksRequestsPerMinute: 5,
+//     jwksUri: `https://${authConfig.domain}/.well-known/jwks.json`
+//   }),
+
+//   audience: authConfig.audience,
+//   issuer: `https://${authConfig.domain}/`,
+//   algorithms: ["RS256"]
+// });
+
+
 // view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -49,10 +78,17 @@ app.use('/graphql', graphqlHTTP({
   graphiql: true,
 }));
 
+// app.get('/login',
+//   passport.authenticate('bearer', { session: false }),
+//   function(req, res) {
+//     res.json({ username: req.user.username, email: req.user.emails[0].value });
+//   });
+
+app.use('/td-manager', tdManager);
 app.use('/pinning', pinningRouter);
 app.use('/textile', textileRouter);
 app.use('/td', indexRouter);
-app.use('/td/airquality', airQuality);
+app.use('/airquality/model', airQuality);
 app.use('/td/cushion', cushion);
 app.use('/td/energyApplianceMonitor', energyApplianceMonitor);
 app.use('/td/energyMonitor', energyMonitor);
@@ -62,6 +98,8 @@ app.use('/td/sleep', sleep);
 app.use('/td/smartTable', smartTable);
 app.use('/td/smartWatch', smartWatch);
 app.use('/mg', smartWatchRouter);
+
+app.use('/thing', thing);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

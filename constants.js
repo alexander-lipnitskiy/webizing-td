@@ -18,6 +18,9 @@ const MONGODB_URL = 'mongodb://localhost:27017';
 // Database Name
 const MONGODB_NAME = 'k-log-pinning-service';
 
+// Database Name
+const MONGODB_NAME_TD = 'td-manager';
+
 module.exports = {
     AIR_QUALITY,
     CUSHION,
@@ -32,5 +35,6 @@ module.exports = {
     SLEEP,
     STAND_HOUR,
     MONGODB_URL,
-    MONGODB_NAME
+    MONGODB_NAME,
+    MONGODB_NAME_TD
 };

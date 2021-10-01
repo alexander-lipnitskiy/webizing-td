@@ -253,96 +253,96 @@ router.post('/stand-hour', async (req, res) => {
 });
 
 // every 7 minutes
-setInterval((param1)=> {
-    service.queryAirQuality(async (data) => {
-        console.log('queryAirQuality')
-        // convert JSON object to String
-        const jsonStr = JSON.stringify(data);
+// setInterval((param1)=> {
+//     service.queryAirQuality(async (data) => {
+//         console.log('queryAirQuality')
+//         // convert JSON object to String
+//         const jsonStr = JSON.stringify(data);
 
-        // read json string to Buffer
-        const buf = Buffer.from(jsonStr);
+//         // read json string to Buffer
+//         const buf = Buffer.from(jsonStr);
 
-        const options = { cidVersion: 1 };
+//         const options = { cidVersion: 1 };
 
-        let bufRes = undefined;
+//         let bufRes = undefined;
 
-        try {
-            bufRes = await ipfs.add(buf, options);
-            console.log(bufRes);
-        } catch (e) {
-            console.log(bufRes);
-        }
+//         try {
+//             bufRes = await ipfs.add(buf, options);
+//             console.log(bufRes);
+//         } catch (e) {
+//             console.log(bufRes);
+//         }
 
-        // Create a new MongoClient
-        const client = new MongoClient(constants.MONGODB_URL,  { useNewUrlParser: true });
+//         // Create a new MongoClient
+//         const client = new MongoClient(constants.MONGODB_URL,  { useNewUrlParser: true });
 
-        // Use connect method to connect to the Server
-        client.connect(function(err) {
-            if (err) {
-                console.log(err)
-            }
+//         // Use connect method to connect to the Server
+//         client.connect(function(err) {
+//             if (err) {
+//                 console.log(err)
+//             }
 
-            const db = client.db(constants.MONGODB_NAME);
+//             const db = client.db(constants.MONGODB_NAME);
 
-            const doc = { metadata: {
-                    name: data.name,
-                    user: data.user,
-                    time: data.time,
-                    type: constants.AIR_QUALITY
-                }, options: options, hash: bufRes[0].hash };
+//             const doc = { metadata: {
+//                     name: data.name,
+//                     user: data.user,
+//                     time: data.time,
+//                     type: constants.AIR_QUALITY
+//                 }, options: options, hash: bufRes[0].hash };
 
-            db.collection(constants.AIR_QUALITY).insertOne(doc, function (err, result) {
-                client.close();
-            })
-        });
+//             db.collection(constants.AIR_QUALITY).insertOne(doc, function (err, result) {
+//                 client.close();
+//             })
+//         });
 
-    })
-}, 20000);
+//     })
+// }, 20000);
 
-//every 5 minute
-setInterval(()=> {
-    energyMonitorService.queryEnergyMonitor(async (data) => {
-        console.log('queryEnergyMonitor')
-        // convert JSON object to String
-        const jsonStr = JSON.stringify(data);
+// //every 5 minute
+// setInterval(()=> {
+//     energyMonitorService.queryEnergyMonitor(async (data) => {
+//         console.log('queryEnergyMonitor')
+//         // convert JSON object to String
+//         const jsonStr = JSON.stringify(data);
 
-        // read json string to Buffer
-        const buf = Buffer.from(jsonStr);
+//         // read json string to Buffer
+//         const buf = Buffer.from(jsonStr);
 
-        const options = { cidVersion: 1 };
+//         const options = { cidVersion: 1 };
 
-        let bufRes = undefined;
+//         let bufRes = undefined;
 
-        try {
-            bufRes = await ipfs.add(buf, options);
-            console.log(bufRes);
-        } catch (e) {
-            console.log(bufRes);
-        }
+//         try {
+//             bufRes = await ipfs.add(buf, options);
+//             console.log(bufRes);
+//         } catch (e) {
+//             console.log(bufRes);
+//         }
 
-        // Create a new MongoClient
-        const client = new MongoClient(constants.MONGODB_URL,  { useNewUrlParser: true });
+//         // Create a new MongoClient
+//         const client = new MongoClient(constants.MONGODB_URL,  { useNewUrlParser: true });
 
-        // Use connect method to connect to the Server
-        client.connect(function(err) {
-            if (err) {
-                console.log(err)
-            }
+//         // Use connect method to connect to the Server
+//         client.connect(function(err) {
+//             if (err) {
+//                 console.log(err)
+//             }
 
-            const db = client.db(constants.MONGODB_NAME);
+//             const db = client.db(constants.MONGODB_NAME);
 
-            const doc = { metadata: {
-                    name: data.name,
-                    user: data.user,
-                    time: data.time,
-                    type: constants.ENERGY_MONITOR
-                }, options: options, hash: bufRes[0].hash };
+//             const doc = { metadata: {
+//                     name: data.name,
+//                     user: data.user,
+//                     time: data.time,
+//                     type: constants.ENERGY_MONITOR
+//                 }, options: options, hash: bufRes[0].hash };
 
-            db.collection(constants.ENERGY_MONITOR).insertOne(doc, function (err, result) {
-                client.close();
-            })
-        });
-    })
-}, 20000);
+//             db.collection(constants.ENERGY_MONITOR).insertOne(doc, function (err, result) {
+//                 client.close();
+//             })
+//         });
+//     })
+// }, 20000);
 
 module.exports = router;

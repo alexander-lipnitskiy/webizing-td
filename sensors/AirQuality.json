@@ -254,10 +254,17 @@
       "nosec_sc": {
           "scheme": "nosec",
           "description": "no security"
-      }
+      },
+      "bearer_sc": {
+        "scheme": "bearer",
+        "in":"header",
+        "format": "jwt",
+        "alg": "ES256",
+        "authorization": "https://localhost:4000/authorization"
+    }
   },
   "security": [
-      "nosec_sc"
+      "bearer_sc"
   ],
   "version": {
       "instance": "0.0.1"
