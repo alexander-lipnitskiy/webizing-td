@@ -13,7 +13,7 @@ const STEP_COUNT = "step-count";
 const EXERCISE_TIME = "exercise-time";
 
 // Connection URL
-const MONGODB_URL = 'mongodb://localhost:27017';
+const MONGODB_URL = 'mongodb://mongodb:27017';
 
 // Database Name
 const MONGODB_NAME = 'k-log-pinning-service';
